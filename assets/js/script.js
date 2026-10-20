@@ -47,6 +47,12 @@ const myTask = [
 
 ];
 
+/* - Intercettare la lista (#lista-task) FATTO
+- Creare un array con dentro degli oggetti con testo, data formattata (stringa), priorità (alta-media-bassa) FATTO
+- Scrivere gli oggetti nella lista FATTO
+- intercettare lo span #contatore FATTO
+- Sostituire il contenuto dello span contatore col numero di oggetti nell'array FATTO */
+
 function aggiungiTask() {
     myTask.forEach((task) => {
         const newLi = document.createElement('li');
