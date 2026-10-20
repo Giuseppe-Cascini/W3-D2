@@ -12,3 +12,65 @@
    7. data automatica nel task
    8. contaPerPriorita()
 */
+const lista = document.querySelector("#lista-task");
+const contatore = document.querySelector("#contatore");
+
+const myTask = [
+    {
+        titoloTask: 'Pagare le bollette',
+        priorita: 'alta',
+        data: new Date(),
+    },
+    {
+        titoloTask: 'Studiare JavaScript',
+        priorita: 'media',
+        data: new Date(),
+    },
+
+    {
+        titoloTask: 'Comprare il pane',
+        priorita: 'bassa',
+        data: new Date(),
+    },
+
+    {
+        titoloTask: 'Chiamare il dentista',
+        priorita: 'alta',
+        data: new Date(),
+    },
+
+    {
+        titoloTask: 'Riposarsi',
+        priorita: 'bassa',
+        data: new Date(),
+    },
+
+];
+
+function aggiungiTask() {
+    myTask.forEach((task) => {
+        const newLi = document.createElement('li');
+        newLi.classList.add(`priorita-${task.priorita}`);
+        const textSpan = document.createElement('span');
+        textSpan.textContent = task.titoloTask;
+        newLi.appendChild(textSpan);
+        const badge = document.createElement('span');
+        badge.classList.add('badge');
+        badge.textContent = task.priorita;
+        newLi.appendChild(badge);
+        const taskDate = document.createElement('span');
+        taskDate.classList.add('data', 'divData');
+        taskDate.textContent = task.data.toLocaleString('it-IT');
+        const elimina = document.createElement('button');
+        elimina.textContent = 'Elimina';
+        taskDate.appendChild(elimina);
+        newLi.appendChild(taskDate);
+        lista.appendChild(newLi);
+
+    })
+}
+function aggiornaContatore() {
+    contatore.textContent = myTask.length;
+}
+aggiungiTask();
+aggiornaContatore();
