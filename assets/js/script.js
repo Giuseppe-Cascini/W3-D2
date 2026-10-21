@@ -49,25 +49,15 @@ const myTask = [
 function aggiungiTask() {
     myTask.forEach((task) => {
         const newLi = document.createElement('li');
-        newLi.classList.add(`priorita-${task.priorita}`);
-
+      
         const textSpan = document.createElement('span');
         textSpan.textContent = task.titoloTask;
         newLi.appendChild(textSpan);
 
-        const badge = document.createElement('span');
-        badge.classList.add('badge');
-        badge.textContent = task.priorita;
-        newLi.appendChild(badge);
-
-        const taskDate = document.createElement('span');
-        taskDate.classList.add('data', 'divData');
-        taskDate.textContent = task.data.toLocaleString('it-IT');
-
         const elimina = document.createElement('button');
         elimina.textContent = 'Elimina';
-        taskDate.appendChild(elimina);
-        newLi.appendChild(taskDate);
+        newLi.appendChild(elimina);
+        
 
         lista.appendChild(newLi);
 
