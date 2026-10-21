@@ -18,7 +18,7 @@ const contatore = document.querySelector("#contatore");
 const myTask = [
     {
         id: 1,
-        titoloTask: 'Pagare le bollette',
+        titoloTask: 'Studiare JavaScript',
         completato: true,
     },
     {
