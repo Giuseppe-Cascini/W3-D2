@@ -14,6 +14,8 @@
 */
 const lista = document.querySelector("#lista-task");
 const contatore = document.querySelector("#contatore");
+const taskForm = document.querySelector('#nuovo-task');
+
 
 const myTask = [
     {
@@ -45,7 +47,7 @@ const myTask = [
 - Scrivere gli oggetti nella lista FATTO
 - intercettare lo span #contatore FATTO
 - Sostituire il contenuto dello span contatore col numero di oggetti nell'array FATTO */
-
+lista.textContent = ''
 function aggiungiTask() {
     myTask.forEach((task) => {
         const newLi = document.createElement('li');
@@ -53,6 +55,14 @@ function aggiungiTask() {
         const textSpan = document.createElement('span');
         textSpan.textContent = task.titoloTask;
         newLi.appendChild(textSpan);
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = task.completato;
+        newLi.appendChild(checkbox);
+        checkbox.addEventListener('Change', (e) => {
+            task.completato = checkbox.checked;
+        })
 
         const elimina = document.createElement('button');
         elimina.textContent = 'Elimina';
@@ -70,3 +80,4 @@ function aggiornaContatore() {
 
 aggiungiTask();
 aggiornaContatore();
+
