@@ -17,34 +17,27 @@ const contatore = document.querySelector("#contatore");
 
 const myTask = [
     {
+        id: 1,
         titoloTask: 'Pagare le bollette',
-        priorita: 'alta',
-        data: new Date(),
+        completato: true,
     },
     {
-        titoloTask: 'Studiare JavaScript',
-        priorita: 'media',
-        data: new Date(),
+        id: 2,
+        titoloTask: 'Scrivere la ToDoList',
+        completato: false,
     },
 
     {
-        titoloTask: 'Comprare il pane',
-        priorita: 'bassa',
-        data: new Date(),
+        id: 3,
+        titoloTask: 'Bere il caffè',
+        completato: true,
     },
 
     {
-        titoloTask: 'Chiamare il dentista',
-        priorita: 'alta',
-        data: new Date(),
+        id: 4,
+        titoloTask: 'Ripassare gli eventi del DOM',
+        completato: false,
     },
-
-    {
-        titoloTask: 'Riposarsi',
-        priorita: 'bassa',
-        data: new Date(),
-    },
-
 ];
 
 /* - Intercettare la lista (#lista-task) FATTO
